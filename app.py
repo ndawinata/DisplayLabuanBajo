@@ -51,12 +51,86 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'json'}
 @app.route('/', methods=['GET', 'POST'])
 def index():
     
-    return render_template("index.html")
+    lf1 = os.listdir("./static/img/forecast1")
+    lf2 = os.listdir("./static/img/forecast2")
+    lf3 = os.listdir("./static/img/forecast3")
+    lswh = os.listdir("./static/img/swh")
+    lw = os.listdir("./static/img/warning")
+    
+    dat = {
+        "forecast1":"./static/img/forecast1/" + lf1[len(lf1)-1],
+        "forecast2":"./static/img/forecast2/" + lf2[len(lf2)-1],
+        "forecast3":"./static/img/forecast3/" + lf3[len(lf3)-1],
+        "swh":"./static/img/swh/" + lswh[len(lswh)-1],
+        "warning":"./static/img/warning/" + lw[len(lw)-1]
+    }
+    
+    return render_template("index.html", data=dat)
+
+@app.route('/list', methods=['GET', 'POST'])
+def list():
+    lf1 = os.listdir("./static/img/forecast1")
+    lf2 = os.listdir("./static/img/forecast2")
+    lf3 = os.listdir("./static/img/forecast3")
+    lswh = os.listdir("./static/img/swh")
+    lw = os.listdir("./static/img/warning")
+    
+    dat = {
+        "forecast1":"./static/img/forecast1/" + lf1[len(lf1)-1],
+        "forecast2":"./static/img/forecast2/" + lf2[len(lf2)-1],
+        "forecast3":"./static/img/forecast3/" + lf3[len(lf3)-1],
+        "swh":"./static/img/swh/" + lswh[len(lswh)-1],
+        "warning":"./static/img/warning/" + lw[len(lw)-1]
+    }
+    return dat
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
+    if request.method == 'POST':
+        req = request
+        forecast1 = req.files['forecast1']
+        forecast2 = req.files['forecast2']
+        forecast3 = req.files['forecast3']
+        swh = req.files['swh']
+        warning = req.files['warning']
+        
+        nameForecast1 = secure_filename(forecast1.filename)
+        nameForecast2 = secure_filename(forecast2.filename)
+        nameForecast3 = secure_filename(forecast3.filename)
+        nameSWH = secure_filename(swh.filename)
+        nameWarning = secure_filename(warning.filename)
+        
+        if nameForecast1 != '':
+            listFile = os.listdir("./static/img/forecast1")
+            for n in listFile:
+                os.remove("./static/img/forecast1/" + n)
+            forecast1.save("./static/img/forecast1/forecast." + os.path.splitext(nameForecast1)[1])
+        
+        if nameForecast2 != '':
+            listFile = os.listdir("./static/img/forecast2")
+            for n in listFile:
+                os.remove("./static/img/forecast2/" + n)
+            forecast2.save("./static/img/forecast2/forecast" + os.path.splitext(nameForecast2)[1])
+        
+        if nameForecast3 != '':
+            listFile = os.listdir("./static/img/forecast3")
+            for n in listFile:
+                os.remove("./static/img/forecast3/" + n)
+            forecast3.save("./static/img/forecast3/forecast" + os.path.splitext(nameForecast3)[1])
+        
+        if nameSWH != '':
+            listFile = os.listdir("./static/img/swh")
+            for n in listFile:
+                os.remove("./static/img/swh/" + n)
+            swh.save("./static/img/swh/swh" + os.path.splitext(nameSWH)[1])
+        
+        if nameWarning != '':
+            listFile = os.listdir("./static/img/warning")
+            for n in listFile:
+                os.remove("./static/img/warning/" + n)
+            warning.save("./static/img/warning/warning" + os.path.splitext(nameWarning)[1])
     
-    return render_template("index.html")
+    return render_template("upload.html")
     
 @app.errorhandler(404)
 def not_found(error=None):
