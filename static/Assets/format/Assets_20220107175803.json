@@ -1,0 +1,234 @@
+{
+    "text_about":"Seismik Sensor Monitoring (SeisMon) adalah aplikasi mobile Android yang digunakan untuk Pemantauan dan Pelaporan kegiatan Preventif Maintenance peralatan Seismik BMKG. Aplikasi ini dibangun menggunakan Framework Javascript yaitu React Native.",
+    "prep":[
+        {"key":"data","title":"Data Preventif","sub":[
+            {"key":"spt","type":"text","model":"input","title":"No. SPT"},
+            {"key":"tim","type":"text","model":"textarea","title":"TIM Pemeliharaan", "placeholder":"1. John Doe \n2. Jane Doe\n3. ..."}
+        ]}
+    ],
+    "sblm_pm":[
+        {"key":"knds_shelter","title":"Kondisi Shelter 4 Sisi","sub":[
+            {"key":"sisi1","type":"file","model":"input","title":"Sisi 1 (Depan)"},
+            {"key":"sisi2","type":"file","model":"input","title":"Sisi 2 (Tampak sebelah kanan)"},
+            {"key":"sisi3","type":"file","model":"input","title":"Sisi 3 (Tampak sebelah belakang)"},
+            {"key":"sisi4","type":"file","model":"input","title":"Sisi 4 (Tampak sebelah kiri)"}
+        ]},
+        {"key":"solar_cell","title":"Solar Cell","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"antenna","title":"Antenna Parabola","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"sistem_power_accu","title":"Sistem Power (Accu)","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"pln","title":"Listrik PLN)","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"sistem_power_regulator","title":"Sistem Power (Solar Regulator)","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"seismik","title":"Peralatan Seismik","sub":[
+            {"key":"seismograf","type":"file","model":"input","title":"Seismograf"},
+            {"key":"accelerometer","type":"file","model":"input","title":"Accelerometer"},
+            {"key":"modem","type":"file","model":"input","title":"Modem Komunikasi"}
+        ]}
+    ],
+    "pm":[
+        {"key":"pembersihan_lingkungan","title":"Pembersihan Lingkungan Shelter","sub":[
+            {"key":"rumput_dahan","type":"text","model":"select","title":"Pembersihan Rumput & Dahan Pohon","sub":["Dilakukan","Tidak"]},
+            {"key":"sarang","type":"text","model":"select","title":"Pembersihan Sarang Laba-Laba","sub":["Dilakukan","Tidak"]},
+            {"key":"cat_tembok","type":"text","model":"select","title":"Pengecatan Tembok","sub":["Dilakukan","Tidak"]},
+            {"key":"cat_pagar","type":"text","model":"select","title":"Pengecatan Tembok","sub":["Dilakukan","Tidak"]}
+        ]},
+        {"key":"pembersihan_peralatan","title":"Pembersihan Seluruh Peralatan","sub":[
+            {"key":"parabola_solarcell","type":"text","model":"select","title":"Pembersihan Parabola & Solar Cell","sub":["Dilakukan","Tidak"]},
+            {"key":"regulator","type":"text","model":"select","title":"Pembersihan Solar Regulator","sub":["Dilakukan","Tidak"]},
+            {"key":"battery","type":"text","model":"select","title":"Pembersihan Battery","sub":["Dilakukan","Tidak"]}
+        ]},
+        {"key":"regulator1","title":"Regulator 1","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"regulator2","title":"Regulator 2","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"regulator3","title":"Regulator 3","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"regulator4","title":"Regulator 4","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"regulator5","title":"Regulator 5","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"regulator6","title":"Regulator 6","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"regulator7","title":"Regulator 7","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"regulator8","title":"Regulator 8","sub":[
+            {"key":"volt","title":"Tegangan", "sup":[
+                {"key":"input_panel","type":"text","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"text","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"text","model":"input","title":"Output Beban"}
+            ]},
+            {"key":"ft","title":"Dokumentasi", "sup":[
+                {"key":"input_panel","type":"file","model":"input","title":"Input Solar Panel"},
+                {"key":"input_baterai","type":"file","model":"input","title":"Input Baterai"},
+                {"key":"output","type":"file","model":"input","title":"Output Beban"}
+            ]}
+        ]},
+        {"key":"baterai1","title":"Baterai 1","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"baterai2","title":"Baterai 2","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"baterai3","title":"Baterai 3","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"baterai4","title":"Baterai 4","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"baterai5","title":"Baterai 5","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"baterai6","title":"Baterai 6","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"baterai7","title":"Baterai 7","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"baterai8","title":"Baterai 8","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"pln","title":"Pengukuran Listrik PLN","sub":[
+            {"key":"tegangan","type":"text","model":"input","title":"Tegangan"},
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"digitizer","title":"Pengecekan Digitizer","sub":[
+            {"key":"foto","type":"file","model":"input","title":"Dokumentasi"}
+        ]},
+        {"key":"centering","title":"Centering","sub":[
+            {"key":"centering","type":"text","model":"select","title":"Centering Broadband","sub":["Dilakukan","Tidak"]}
+        ]},
+        {"key":"leveling","title":"Leveling","sub":[
+            {"key":"lv_broadband","type":"text","model":"select","title":"Leveling Sensor Broadband","sub":["Dilakukan","Tidak"]},
+            {"key":"lv_accelerometer","type":"text","model":"select","title":"Leveling Sensor Accelerometer","sub":["Dilakukan","Tidak"]}
+        ]},
+        {"key":"kabel","title":"Kondisi Kabel-Kabel","sub":[
+            {"key":"kondisi","type":"text","model":"select","title":"Kondisi Kabel-kabel","sub":["Baik","Tidak"]}
+        ]}
+    ],
+    "ssd_pm":[
+        {"key":"knds_shelter","title":"Kondisi Shelter 4 Sisi","sub":[
+            {"key":"sisi1","type":"file","model":"input","title":"Sisi 1 (Depan)"},
+            {"key":"sisi2","type":"file","model":"input","title":"Sisi 2 (Tampak sebelah kanan)"},
+            {"key":"sisi3","type":"file","model":"input","title":"Sisi 3 (Tampak sebelah belakang)"},
+            {"key":"sisi4","type":"file","model":"input","title":"Sisi 4 (Tampak sebelah kiri)"}
+        ]},
+        {"key":"solar_cell","title":"Solar Cell","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"antenna","title":"Antenna Parabola","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"sistem_power_accu","title":"Sistem Power (Accu)","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"pln","title":"Listrik PLN)","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"sistem_power_regulator","title":"Sistem Power (Solar Regulator)","sub":[
+            {"key":"kondisi","type":"file","model":"input","title":"Kondisi"}
+        ]},
+        {"key":"seismik","title":"Peralatan Seismik","sub":[
+            {"key":"seismograf","type":"file","model":"input","title":"Seismograf"},
+            {"key":"accelerometer","type":"file","model":"input","title":"Accelerometer"},
+            {"key":"modem","type":"file","model":"input","title":"Modem Komunikasi"}
+        ]}
+    ],
+    "rekomendasi":[
+        {"key":"rekomendasi","title":"Rekomendasi","sub":[
+            {"key":"rekom","type":"text","model":"textarea","title":"Rekomendasi"},
+            {"key":"status","type":"text","model":"select","title":"Status Site","sub":[
+                {"key":"Sudah PM tapi belum ON","color":"red"},
+                {"key":"Sudah PM tapi perlu penanganan","color":"yellow"},
+                {"key":"Sudah PM dan Status OK","color":"green"}
+                ]
+            }
+        ]}
+    ]
+}

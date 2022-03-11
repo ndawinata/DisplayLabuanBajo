@@ -1,0 +1,20 @@
+//
+// forms.scss
+// Extended from Bootstrap
+//
+
+.contact-form-result,
+.contact-form-result {
+  display: none;
+  margin-top: 1rem;
+}
+
+.contact-form.animated {
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+}
+
+// Google reCAPTCHA v3
+body.hide-grecaptcha-bottomright .grecaptcha-badge[data-style=bottomright] {
+  display: none !important;
+}

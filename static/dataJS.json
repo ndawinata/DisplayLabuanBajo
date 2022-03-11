@@ -1,0 +1,16 @@
+[
+    {"key":"kode","title":"Kode","model":"input","type":"text"},
+    {"key":"tipe","title":"Tipe","model":"input","type":"text"},
+    {"key":"latitude","title":"Latitude","model":"input","type":"number"},
+    {"key":"longitude","title":"Longitude","model":"input","type":"number"},
+    {"key":"altitude","title":"Altitude","model":"input","type":"number"},
+    {"key":"wilayah_waktu","title":"Wilayah waktu","model":"input","type":"text"},
+    {"key":"tahun","title":"Tahun Instalasi","model":"input","type":"text"},
+    {"key":"nama","title":"Nama","model":"input","type":"text"},
+    {"key":"alamat","title":"Alamat","model":"input","type":"text"},
+    {"key":"kelurahan","title":"Kelurahan","model":"input","type":"text"},
+    {"key":"kecamatan","title":"Kecamatan","model":"input","type":"text"},
+    {"key":"kota_kab","title":"Kota/Kabupaten","model":"input","type":"text"},
+    {"key":"provinsi","title":"Provinsi","model":"input","type":"text"}
+    
+]

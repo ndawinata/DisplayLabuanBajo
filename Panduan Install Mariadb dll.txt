@@ -1,0 +1,54 @@
+----- install mariadb
+
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+
+query -> GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+query -> FLUSH PRIVILEGES;
+
+sudo systemctl status mariadb
+
+----- install phpmyadmin
+https://www.cloudbooklet.com/install-phpmyadmin-on-ubuntu-20-04-with-apache/
+
+sudo apt install phpmyadmin
+
+--kalau tidak bisa
+sudo a2enconf phpmyadmin
+sudo service apache2 restart
+
+
+----- edit path python from python2 to python3
+nano ~/.bashrc 
+edit -> alias python=python3
+
+source ~/.bashrc
+
+------
+ikuti langkah2 ini untuk buat gunicorn dan wsgi 
+
+https://medium.com/@thishantha17/build-a-simple-python-rest-api-with-apache2-gunicorn-and-flask-on-ubuntu-18-04-c9d47639139b
+
+sudo ufw enable
+sudo ufw allow 80/tcp
+sudo ufw allow 22/tcp
+sudo ufw allow 5000/tcp
+ufw status
+
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo a2enmod proxy_balancer
+sudo a2enmod lbmethod_byrequests
+
+edit file site-available/000____
+ProxyPreserveHost On
+<Proxy *>
+Order allow,deny
+Allow from all
+</Proxy>
+ProxyPass / http://0.0.0.0:5000/
+ProxyPassReverse / http://0.0.0.0:5000/
+
+
+ubah max_allowed_packet di mysql agar dapat meyimpan file gede my.cnf max_allowed_packet=50M
+

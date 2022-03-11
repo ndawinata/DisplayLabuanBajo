@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.bmkg.go.id/asset/img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <title>Maintenance SeisMon</title>
+</head>
+
+<body>
+    <div class="container">
+        
+        <form enctype="multipart/form-data" method="post">
+            <div class="mt-4 ms-3 me-3">
+                <div class=" mb-3">
+                    {% for n in items  %}
+                    <div class="mb-5">
+                        <div class="mb-3">
+                            <b style="text-transform: uppercase; color:darkblue;">{{ n }}</b>
+                        </div>
+                        <div class="">
+                            {% for x in items[n] %}
+                                {% if x['type'] == 'file' %}
+                                <div class="mb-4">
+                                            <label for="{{ x['key'] }}" class="form-label">{{ x['title'] }}</label>
+                                            <input type="file" class="form-control" id="{{ x['key'] }}"
+                                                name="{{ x['key'] }}" aria-describedby="btn_{{ x['key'] }}" aria-label="Upload">
+                                </div>
+                                {% elif x['type'] == 'checkbox' %}
+                                    <div class="mb-3">
+                                        <b>{{ x['title'] }}</b>
+                                        {% for y in x['sub'] %}
+                                            <div class="mb-1 ">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="{{ y }}" id="{{ x['key'] }}_{{y}}" name="{{ x['key'] }}">
+                                                    <label class="form-check-label" for="{{ x['key'] }}_{{y}}">
+                                                    {{ y }}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                <div class="mb-3">
+                                    <label for="{{ x['key'] }}" class="form-label">{{ x['title'] }}</label>
+                                    {% if x['model'] == 'textarea'%}
+                                    <textarea class="form-control" id="{{ x['key'] }}" name="{{ x['key'] }}"
+                                        rows="4"></textarea>
+                                    {% else %}
+                                    <input type="{{x['type']}}" class="form-control" id="{{ x['key'] }}" name="{{ x['key'] }}">
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="input-group mb-5 mt-3 d-flex justify-content-center">
+                    <button class="btn btn-primary" id="btn_submit">Submit</button>
+                </div>
+                
+                <!-- </div> -->
+            </div>
+        </form>
+       
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <meta id="my-data" data-bangunan='{{ items["bangunan"] }}' data-komunikasi="{{ items['komunikasi']}}"
+        data-peralatan="{{ items['peralatan_seismik']}}" data-power="{{ items['power_supply']}}"
+        data-dokum="{{ items['dokumentasi_foto']}}" data-riwayat="{{ items['riwayat_pemeliharaan']}}"
+        data-rekom="{{ items['rekom_saran']}}">
+    <script>
+        $(document).ready(function () {
+            bsCustomFileInput.init()
+        })
+    </script>
+</body>
+
+</html>
