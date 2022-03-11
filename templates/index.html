@@ -113,6 +113,10 @@
             $('#wilayah').text(gempa.Dirasakan)
             $('#shakemap').attr("src","https://data.bmkg.go.id/DataMKG/TEWS/"+gempa.Shakemap)
         })
+        setTimeout(function() {
+            location.reload();
+            console.log(reload)
+        }, 30000);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
