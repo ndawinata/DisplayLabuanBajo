@@ -103,7 +103,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        $.get("https://cors-anywhere.herokuapp.com/https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json", (data) => {
+        $.get("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json", (data) => {
             let gempa = data.Infogempa.gempa
             $('#tgl').text(gempa.Tanggal + ", " + gempa.Jam)
             $('#magnitude').text(gempa.Magnitude)
