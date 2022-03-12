@@ -57,6 +57,19 @@ def gempa():
     
     return x.json()
 
+@app.route('/sat', methods=['GET', 'POST'])
+def sat():
+    response = requests.get("http://satelit.bmkg.go.id/IMAGE/HIMA/H08_EH_NTT.png")
+    base64cuy = base64.b64encode(response.content).decode("utf-8")
+    uri = ("data:" +  response.headers['Content-Type'] + ";" + "base64," + base64cuy)
+    
+    dat = {
+        "uri":uri
+    }
+    # print(aa)
+    
+    return dat
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -74,6 +87,7 @@ def index():
         "swh":"./static/img/swh/" + lswh[len(lswh)-1],
         "warning":"./static/img/warning/" + lw[len(lw)-1]
     }
+    
     
     return render_template("index.html", data=dat)
 
