@@ -16,6 +16,7 @@ import io
 import base64
 from PIL import Image
 import json
+import requests
 # sumber mongodb : https://www.w3schools.com/python/python_mongodb_getstarted.asp
 
 # import datetime
@@ -47,6 +48,15 @@ app.config['UPLOAD_FOLDER'] = 'static'
 # mycursor = mydb.cursor()
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'json'}
+
+@app.route('/gempa', methods=['GET', 'POST'])
+def gempa():
+    x = requests.get("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json")
+    
+    # print(x.json())
+    
+    return x.json()
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
