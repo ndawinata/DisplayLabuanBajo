@@ -81,15 +81,15 @@ def index():
     lw = os.listdir("./static/img/warning")
     
     dat = {
-        "forecast1":"./static/img/forecast1/" + lf1[len(lf1)-1],
-        "forecast2":"./static/img/forecast2/" + lf2[len(lf2)-1],
-        "forecast3":"./static/img/forecast3/" + lf3[len(lf3)-1],
-        "swh":"./static/img/swh/" + lswh[len(lswh)-1],
-        "warning":"./static/img/warning/" + lw[len(lw)-1]
+        "forecast1":"img/forecast1/" + lf1[len(lf1)-1],
+        "forecast2":"img/forecast2/" + lf2[len(lf2)-1],
+        "forecast3":"img/forecast3/" + lf3[len(lf3)-1],
+        "swh":"img/swh/" + lswh[len(lswh)-1],
+        "warning":"img/warning/" + lw[len(lw)-1]
     }
     
     
-    return render_template("index.html", data=dat)
+    return render_template("index.html", data=dat, f1=dat["forecast1"], f2=dat["forecast2"], f3=dat["forecast3"], swh=dat["swh"], wrn=dat["warning"])
 
 @app.route('/list', methods=['GET', 'POST'])
 def list():
@@ -128,7 +128,7 @@ def upload():
             listFile = os.listdir("./static/img/forecast1")
             for n in listFile:
                 os.remove("./static/img/forecast1/" + n)
-            forecast1.save("./static/img/forecast1/forecast." + os.path.splitext(nameForecast1)[1])
+            forecast1.save("./static/img/forecast1/forecast" + os.path.splitext(nameForecast1)[1])
         
         if nameForecast2 != '':
             listFile = os.listdir("./static/img/forecast2")
