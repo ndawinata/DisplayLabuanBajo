@@ -124,35 +124,38 @@ def upload():
         nameSWH = secure_filename(swh.filename)
         nameWarning = secure_filename(warning.filename)
         
+        now = datetime.now()
+        timestamp = now.strftime("%Y%m%d_%H%M%S")
+        
         if nameForecast1 != '':
             listFile = os.listdir("./static/img/forecast1")
             for n in listFile:
                 os.remove("./static/img/forecast1/" + n)
-            forecast1.save("./static/img/forecast1/forecast" + os.path.splitext(nameForecast1)[1])
+            forecast1.save("./static/img/forecast1/forecast_" + timestamp + os.path.splitext(nameForecast1)[1])
         
         if nameForecast2 != '':
             listFile = os.listdir("./static/img/forecast2")
             for n in listFile:
                 os.remove("./static/img/forecast2/" + n)
-            forecast2.save("./static/img/forecast2/forecast" + os.path.splitext(nameForecast2)[1])
+            forecast2.save("./static/img/forecast2/forecast_" + timestamp + os.path.splitext(nameForecast2)[1])
         
         if nameForecast3 != '':
             listFile = os.listdir("./static/img/forecast3")
             for n in listFile:
                 os.remove("./static/img/forecast3/" + n)
-            forecast3.save("./static/img/forecast3/forecast" + os.path.splitext(nameForecast3)[1])
+            forecast3.save("./static/img/forecast3/forecast_" + timestamp + os.path.splitext(nameForecast3)[1])
         
         if nameSWH != '':
             listFile = os.listdir("./static/img/swh")
             for n in listFile:
                 os.remove("./static/img/swh/" + n)
-            swh.save("./static/img/swh/swh" + os.path.splitext(nameSWH)[1])
+            swh.save("./static/img/swh/swh_" + timestamp + os.path.splitext(nameSWH)[1])
         
         if nameWarning != '':
             listFile = os.listdir("./static/img/warning")
             for n in listFile:
                 os.remove("./static/img/warning/" + n)
-            warning.save("./static/img/warning/warning" + os.path.splitext(nameWarning)[1])
+            warning.save("./static/img/warning/warning_" + timestamp + os.path.splitext(nameWarning)[1])
     
     return render_template("upload.html")
     
