@@ -79,17 +79,19 @@ def index():
     lf3 = os.listdir("./static/img/forecast3")
     lswh = os.listdir("./static/img/swh")
     lw = os.listdir("./static/img/warning")
+    lw2 = os.listdir("./static/img/warning2")
     
     dat = {
         "forecast1":"img/forecast1/" + lf1[len(lf1)-1],
         "forecast2":"img/forecast2/" + lf2[len(lf2)-1],
         "forecast3":"img/forecast3/" + lf3[len(lf3)-1],
         "swh":"img/swh/" + lswh[len(lswh)-1],
-        "warning":"img/warning/" + lw[len(lw)-1]
+        "warning":"img/warning/" + lw[len(lw)-1],
+        "warning2":"img/warning2/" + lw2[len(lw2)-1]
     }
     
     
-    return render_template("index.html", data=dat, f1=dat["forecast1"], f2=dat["forecast2"], f3=dat["forecast3"], swh=dat["swh"], wrn=dat["warning"])
+    return render_template("index.html", data=dat, f1=dat["forecast1"], f2=dat["forecast2"], f3=dat["forecast3"], swh=dat["swh"], wrn=dat["warning"], wrn2=dat["warning2"])
 
 @app.route('/list', methods=['GET', 'POST'])
 def list():
@@ -98,13 +100,15 @@ def list():
     lf3 = os.listdir("./static/img/forecast3")
     lswh = os.listdir("./static/img/swh")
     lw = os.listdir("./static/img/warning")
+    lw2 = os.listdir("./static/img/warning2")
     
     dat = {
         "forecast1":"./static/img/forecast1/" + lf1[len(lf1)-1],
         "forecast2":"./static/img/forecast2/" + lf2[len(lf2)-1],
         "forecast3":"./static/img/forecast3/" + lf3[len(lf3)-1],
         "swh":"./static/img/swh/" + lswh[len(lswh)-1],
-        "warning":"./static/img/warning/" + lw[len(lw)-1]
+        "warning":"./static/img/warning/" + lw[len(lw)-1],
+        "warning2":"./static/img/warning2/" + lw2[len(lw2)-1]
     }
     return dat
 
@@ -117,12 +121,14 @@ def upload():
         forecast3 = req.files['forecast3']
         swh = req.files['swh']
         warning = req.files['warning']
+        warning2 = req.files['warning2']
         
         nameForecast1 = secure_filename(forecast1.filename)
         nameForecast2 = secure_filename(forecast2.filename)
         nameForecast3 = secure_filename(forecast3.filename)
         nameSWH = secure_filename(swh.filename)
         nameWarning = secure_filename(warning.filename)
+        nameWarning2 = secure_filename(warning2.filename)
         
         now = datetime.now()
         timestamp = now.strftime("%Y%m%d_%H%M%S")
@@ -156,6 +162,12 @@ def upload():
             for n in listFile:
                 os.remove("./static/img/warning/" + n)
             warning.save("./static/img/warning/warning_" + timestamp + os.path.splitext(nameWarning)[1])
+        
+        if nameWarning2 != '':
+            listFile = os.listdir("./static/img/warning2")
+            for n in listFile:
+                os.remove("./static/img/warning2/" + n)
+            warning2.save("./static/img/warning2/warning_" + timestamp + os.path.splitext(nameWarning2)[1])
     
     return render_template("upload.html")
     
